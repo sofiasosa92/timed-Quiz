@@ -1,0 +1,59 @@
+:root {
+    background-color: rgb(231, 214, 193);
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.quiz {
+    margin: 100 px;
+    max-width: 400px;
+}
+
+.scores {
+    margin: 100 px;
+    max-width: 400px;
+}
+
+p {
+    margin: 20px 15px;
+}
+
+.landing {
+    text-align: center;
+}
+
+.scoresHeader {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+}
+
+.timer {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+button {
+    font-size: 15px;
+    padding: 1rem;
+    width: 8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgb(3, 3, 3);
+    background: linear-gradient(90deg, rgb(186, 164, 123) 100%, rgb(217, 191, 143) 100%);
+    border-radius: 4px;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(117, 107, 89);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.hide {
+    display: none;
+}

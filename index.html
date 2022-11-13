@@ -13,7 +13,7 @@
     
     <header>
         <div>
-            <a href="./highscores.html"><button class="scores-header" id="view-high-scores">View High
+            <a href="./highscores.html"><button class="scores-header" id="view-high-scores">High
                     Scores</button></a>
         </div>
 
@@ -33,17 +33,22 @@
             </div>
         </div>
 
-
-
-
+<!-- lets focus on this mess-->
+        <div class="hide" id="questions">
+            <h2 id="question-words"></h2>
+            <div class="options" id="options"></div>
         </div>
+
+        <div class="hide" id="quiz-end">
+            <h2>Finished!</h2>
+            <p>Your final score is: <span id="score-final"></span></p>
+            <p>Enter your initials: <input type="text" id="name" max="3" />
+                <button id="submit-score">Submit</button>
+            </p>
+        </div>
+
+        <div id="feedback" class="feedback hide"></div>
     </main>
-
-   
-
-
-    <script src="./assets/questions.js"></script>
-    <script src="./assets/quiz.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
-
 </html>
