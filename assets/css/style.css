@@ -1,0 +1,35 @@
+:root {
+    background-color: rgb(231, 214, 193);
+}
+
+/* Remember that the *{ means all elements will have those components */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family:sans-serif;
+}
+
+h1 {
+    font-size: 5.4rem;
+    margin: 4rem;
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 4rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
