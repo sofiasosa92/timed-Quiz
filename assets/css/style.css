@@ -4,15 +4,16 @@
 
 *{
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
 }
 
 .quiz {
-    margin: 100 px;
+    margin: 100px auto 0 auto;
     max-width: 400px;
 }
 
 .scores {
-    margin: 100 px;
+    margin: 100px auto 0 auto;
     max-width: 400px;
 }
 
@@ -39,7 +40,7 @@ p {
 button {
     font-size: 15px;
     padding: 1rem;
-    width: 8rem;
+    width: 10rem;
     text-align: center;
     margin-bottom: 1rem;
     color: rgb(3, 3, 3);
@@ -80,7 +81,7 @@ ol {
 }
   
   li:nth-child(odd) {
-    background-color: #dfdae7;
+    background-color: #ffffff;
 }
 
 /* This will apply on any screen smaller than 768px */

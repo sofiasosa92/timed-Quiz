@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Below i have linked the css -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,10 @@
 </head>
 
 <body>
-    
+<!-- Below i have linked the highscores file to display when clicked -->
     <header>
         <div>
-            <a href="./highscores.html"><button class="scores-header" id="view-high-scores">High
-                    Scores</button></a>
+            <a href="./highscores.html"><button class="scores-header" id="view-high-scores">Highcores</button></a>
         </div>
 
         <div class="timer">
@@ -25,19 +24,17 @@
     </header>
 
     <main class="quiz">
-        <div id="start-quiz">
-            <div class="game page" id="start-screen">
-                <h1>The impossible Quiz</h1>
+        <div id="quiz-start">
+            <div class="landing" id="start-screen">
+                <h1>The Impossible Quiz</h1>
                 <h2> Answer the following coding questions, try to beat the timer! </h2>
                 <button id="start">Start Quiz</button>
             </div>
         </div>
 
-<!-- lets focus on this mess-->
         <div class="hide" id="questions">
-            <h2 id="question-words"></h2>
-            <div class="options" id="options"></div>
-        </div>
+            <h2 id="question-words">Inside which HTML element do we put teh javascript?</h2>
+            <div class="choices" id="choices"></div>
 
         <div class="hide" id="quiz-end">
             <h2>Finished!</h2>
@@ -49,6 +46,8 @@
 
         <div id="feedback" class="feedback hide"></div>
     </main>
+    <!-- Below i have linked the script.js file -->
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
