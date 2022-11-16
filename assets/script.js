@@ -6,17 +6,17 @@ var questions = [
         answer: "<script>"
     },
     {
-        prompt: "me me me me  ",
+        prompt: "Question 2 ",
         choices: ["5", "54", "3", "6"],
         answer: "54"
     },
     {
-        prompt: "na na na  ",
+        prompt: "Question 3 ",
         choices: ["5", "54", "3", "6"],
         answer: "3"
     },
     {
-        prompt: "he he he he ",
+        prompt: "Question 4 ",
         choices: ["5", "54", "3", "6"],
         answer: "6"
     },
@@ -69,15 +69,22 @@ function getQuestion() {
 
 //In this section we are deducting time for wrong answers
 
-function questionClick() {
-    if(this.value !== questions[currentQuestionIndex].answer) {
+function questionClick(event) {
+
+    var buttonEl = event.target;
+
+    // // if (!buttonEl.matches('.choices')) {
+    // //     return;
+    // }
+
+    if(buttonEl.value !== questions[currentQuestionIndex].answer) {
         time -= 10;
         if(time < 0) {
             time = 0;
         }
 
         timerEl.textContent = time;
-        feedbackEl.textContent = 'Wrong! The correct answer was ${questions[currentQuestionIndex].answer}.';
+        feedbackEl.textContent = `Wrong! The correct answer was ${questions[currentQuestionIndex].answer}.`;
         feedbackEl.styleColor = "red";
     } else {
         feedbackEl.textContent = "Correct!";
@@ -88,7 +95,7 @@ function questionClick() {
         feedbackEl.setAttribute("class", "feedback hide");
     }, 2000);
     currentQuestionIndex++;
-    if(currentQuestionIndex === undefined) {
+    if(currentQuestionIndex === questions.length) {
         quizEnd();
     } else {
         getQuestion();
@@ -101,13 +108,14 @@ function quizEnd() {
     clearInterval(timerId);
     var endScreen = document.getElementById("quiz-end");
     endScreen.removeAttribute("class");
-    endScreen.innerHTML = "hello"
+    endScreen.innerHTML = "hello" //this is where the issue is, i added this to note it.
     var finalScore = document.getElementById("score-final");
+    console.log(finalScore)
     finalScore.textContent = time;
     questionsEl.setAttribute("class", "hide");
 }
 
-//When timer reacher to 0
+//When timer reaches to 0
 
 function clock() {
     time--;
