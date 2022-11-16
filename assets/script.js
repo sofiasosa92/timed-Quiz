@@ -6,21 +6,28 @@ var questions = [
         answer: "<script>"
     },
     {
-        prompt: "Question 2 ",
-        choices: ["5", "54", "3", "6"],
-        answer: "54"
+        prompt: "How do you call a function named myFunction?",
+        choices: ["call myFunction()", "myFunction()", "call function myFunction", "Call.myFunction"],
+        answer: "myFunction()"
     },
     {
-        prompt: "Question 3 ",
-        choices: ["5", "54", "3", "6"],
-        answer: "3"
+        prompt: "How does a for loop start?",
+        choices: ["for (i = 0; i <= 5; i++)", "for (i = 0; i <= 5)", "for i = 1 to 5", " for (i <= 5; i++)"],
+        answer: "for (i = 0; i <= 5; i++)"
     },
     {
-        prompt: "Question 4 ",
-        choices: ["5", "54", "3", "6"],
-        answer: "6"
+        prompt: "In JavaScript, which of the following is a logical operator?",
+        choices: ["|", "&&", "%", "/"],
+        answer: "&&"
     },
-];
+    {
+        prompt: "A named element in a JavaScript program that is used to store and retrieve data is a _____.",
+        choices: ["method", "assignment operator", "variable", "string"],
+        answer: "variable"
+    }];
+
+
+
 
 //Dom elements
 
