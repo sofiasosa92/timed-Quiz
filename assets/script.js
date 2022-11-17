@@ -1,27 +1,27 @@
 var questions = [
     //this will be my questions that will be displayed in the quiz
     {
-        prompt: "Inside which HTML element do we put the JavaScript?",
+        prompt: "1. Inside which HTML element do we put the JavaScript?",
         choices: ["<javascript>", "<js>", "<script>", "<scripting>"],
         answer: "<script>"
     },
     {
-        prompt: "How do you call a function named myFunction?",
+        prompt: "2. How do you call a function named myFunction?",
         choices: ["call myFunction()", "myFunction()", "call function myFunction", "Call.myFunction"],
         answer: "myFunction()"
     },
     {
-        prompt: "How does a for loop start?",
+        prompt: "3. How does a for loop start?",
         choices: ["for (i = 0; i <= 5; i++)", "for (i = 0; i <= 5)", "for i = 1 to 5", " for (i <= 5; i++)"],
         answer: "for (i = 0; i <= 5; i++)"
     },
     {
-        prompt: "In JavaScript, which of the following is a logical operator?",
+        prompt: "4. In JavaScript, which of the following is a logical operator?",
         choices: ["|", "&&", "%", "/"],
         answer: "&&"
     },
     {
-        prompt: "A named element in a JavaScript program that is used to store and retrieve data is a _____.",
+        prompt: "5. A named element in a JavaScript program that is used to store and retrieve data is a _____.",
         choices: ["method", "assignment operator", "variable", "string"],
         answer: "variable"
     }];
@@ -61,18 +61,18 @@ function quizStart() {
 
 function getQuestion() {
     var currentQuestion = questions[currentQuestionIndex];
-    var promptEl = document.getElementById("question-words")
+    var promptEl = document.getElementById("question-words");
     promptEl.textContent = currentQuestion.prompt;
     choicesEl.innerHTML = "";
-    currentQuestion.choices.forEach(function(choice, i) {
-        var choiceBtn = document.createElement("button");
-        choiceBtn.setAttribute("value", choice);
-        choiceBtn.textContent = i + 1 + ". " + choice;
-        choiceBtn.onclick = questionClick;
-        choicesEl.appendChild (choiceBtn);
-    })
-
-}
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+    var choice = currentQuestion.choices [i];
+    var choiceBtn = document.createElement("button");
+    choiceBtn.setAttribute("class", "choice");
+    choiceBtn.setAttribute("value", choice);
+    choiceBtn.textContent = i + 1 + ". " + choice;
+    choiceBtn.onclick = questionClick;
+    choicesEl.appendChild(choiceBtn);
+}}
 
 //In this section we are deducting time for wrong answers
 
@@ -80,9 +80,9 @@ function questionClick(event) {
 
     var buttonEl = event.target;
 
-    // // if (!buttonEl.matches('.choices')) {
-    // //     return;
-    // }
+    if (!buttonEl.matches('.choice')) {
+        return;
+    }
 
     if(buttonEl.value !== questions[currentQuestionIndex].answer) {
         time -= 10;
@@ -115,10 +115,8 @@ function quizEnd() {
     clearInterval(timerId);
     var endScreen = document.getElementById("quiz-end");
     endScreen.removeAttribute("class");
-    endScreen.innerHTML = "hello" //this is where the issue is, i added this to note it.
-    var finalScore = document.getElementById("score-final");
-    console.log(finalScore)
-    finalScore.textContent = time;
+    var finalScoreEl = document.getElementById("score-final");
+    finalScoreEl.textContent = time;
     questionsEl.setAttribute("class", "hide");
 }
 
@@ -131,6 +129,7 @@ function clock() {
         quizEnd();
     }
 }
+
 
 //Log player score and initials
 
