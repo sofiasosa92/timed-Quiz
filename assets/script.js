@@ -135,6 +135,7 @@ function clock() {
 
 function saveHighscore() {
     var name = nameEl.value.trim();
+    console.log(name)
     if(name !== "") {
         var highscores = 
         JSON.parse(window.localStorage.getItem("highscores")) || [];
@@ -144,6 +145,7 @@ function saveHighscore() {
         };
         highscores.push(newScore);
         window.localStorage.setItem("highscores", JSON.stringify(highscores));
+    
     }
 }
 
@@ -157,9 +159,9 @@ function checkForEnter(event) {
 nameEl.onKeyup = checkForEnter;
 
 //Save score
-// submitButton.onclick = saveHighscore;
 
-submitButton.addEventListener('submit', saveHighscore)
+submitButton.onclick = saveHighscore;
+console.log(submitButton, "click")
 
 //start quiz
 

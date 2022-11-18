@@ -1,11 +1,11 @@
-var scoresButton = document.querySelector("#see-high-scores");
+var scoresButton = document.querySelector("#view-high-scores");
 
 function showHighscores() {
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
-    highscores.sort(function(a, b) {
+    highscores.sort(function (a, b) {
         return b.score - a.score;
     });
-    highscores.forEach(function(score) {
+    highscores.forEach(function (score) {
         var liTag = document.createElement("li");
         liTag.textContent = score.name + " - " + score.score;
         var olEl = document.getElementById("highscores");
@@ -13,7 +13,7 @@ function showHighscores() {
     });
 }
 
-//clear scores
+// clear scores
 
 function clearHighscores() {
     window.localStorage.removeItem("highscores");
